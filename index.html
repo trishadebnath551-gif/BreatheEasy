@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreatheEasy | Air Quality Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <h1>BreatheEasy</h1>
+        </div>
+        <div class="header-icons">
+            <span>🌤️</span>
+            <span>🍃</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="location-section">
+            <p class="small-heading">YOUR LOCATION</p>
+
+            <div class="location-row">
+                <div>
+                    <h2 id="location">Agartala, Tripura</h2>
+                    <p class="subtext">Check the air around you</p>
+                </div>
+
+                <button class="location-btn" id="locationBtn" type="button">
+                    📍 My Location
+                </button>
+            </div>
+
+            <form id="city-search-form" class="city-search-form">
+                <input
+                    type="search"
+                    id="city-input"
+                    placeholder="Search any Indian city..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">Search</button>
+
+                <div id="city-suggestions"></div>
+
+                <p id="search-message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="aqi-card">
+            <div class="section-heading">
+                <span class="live-dot"></span>
+                <h3>Live Air Quality</h3>
+            </div>
+
+            <div class="aqi-content">
+                <div>
+                    <p class="aqi-label">US AQI (Estimated)</p>
+                    <h2 id="aqi-value">--</h2>
+                </div>
+
+                <div class="aqi-status">
+                    <p>Air Quality is</p>
+                    <h3 id="aqi-status">Waiting for data</h3>
+                </div>
+            </div>
+
+            <div class="pollutants">
+                <div>
+                    <p>PM2.5</p>
+                    <h3><span id="pm25">--</span> <small>µg/m³</small></h3>
+                </div>
+
+                <div>
+                    <p>PM10</p>
+                    <h3><span id="pm10">--</span> <small>µg/m³</small></h3>
+                </div>
+            </div>
+
+            <div class="aqi-scale">
+                <div class="scale-colors"></div>
+                <div class="scale-labels">
+                    <span>Good</span>
+                    <span>Moderate</span>
+                    <span>Poor</span>
+                    <span>Unhealthy</span>
+                    <span>Severe</span>
+                </div>
+            </div>
+
+            <p class="update-time" id="update-time">
+                Waiting for live readings...
+            </p>
+
+            <p class="data-note">
+    AQI is an estimated US Air Quality Index provided by
+    Open-Meteo. Values may differ from India's official CPCB AQI
+    and local monitoring stations.
+</p>
+        </section>
+
+        <section class="weather-card">
+            <div class="weather-heading">
+                <div>
+                    <p class="small-heading">WEATHER TODAY</p>
+                    <h2>Weather Conditions</h2>
+                </div>
+                <span class="weather-icon">🌤️</span>
+            </div>
+
+            <div class="temperature">
+                <h2 id="temperature">--°C</h2>
+                <p id="weather-description">Weather data unavailable</p>
+            </div>
+
+            <div class="weather-details">
+                <div>
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                </div>
+
+                <div>
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <h3 id="wind">-- km/h</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="forecast-section">
+            <div class="forecast-heading">
+                <div>
+                    <p class="small-heading">PLAN AHEAD</p>
+                    <h2>Air Quality Forecast</h2>
+                </div>
+            </div>
+
+            <p class="forecast-note">Estimated hourly US AQI</p>
+
+            <div class="forecast-list" id="forecast-list">
+                <p>Forecast will appear here.</p>
+            </div>
+        </section>
+
+        <section class="tips-card">
+            <span class="tips-icon">🍃</span>
+            <div>
+                <h3 id="health-title">Stay Air Aware</h3>
+                <p id="health-tip">
+                    Check your local air quality before planning outdoor activities.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="active">🏠<span>Home</span></a>
+        <a href="#forecast-list">📊<span>Forecast</span></a>
+        <a href="#location">🗺️<span>Explore</span></a>
+        <a href="#health-title">🍃<span>Health</span></a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
